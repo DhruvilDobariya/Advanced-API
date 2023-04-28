@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using FilterLearn.Filters;
 using System.Web.Http;
 
 namespace FilterLearn
@@ -10,6 +8,9 @@ namespace FilterLearn
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            AuthenticationFilterLearn authenticationFilterLearn = new AuthenticationFilterLearn();
+            config.Filters.Add(authenticationFilterLearn);
 
             // Web API routes
             config.MapHttpAttributeRoutes();
