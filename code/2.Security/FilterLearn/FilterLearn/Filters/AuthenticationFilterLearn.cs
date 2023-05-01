@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http.Filters;
 using System.Web.Http.Results;
 
@@ -21,7 +18,7 @@ namespace FilterLearn.Filters
             IEnumerable<string> usernames = new List<string>();
             IEnumerable<string> passwords = new List<string>();
             IEnumerable<string> userTypes = new List<string>();
-            if(context.Request.Headers.TryGetValues("X-Username", out usernames) && context.Request.Headers.TryGetValues("X-Password", out passwords) && context.Request.Headers.TryGetValues("X-UserType", out userTypes))
+            if (context.Request.Headers.TryGetValues("X-Username", out usernames) && context.Request.Headers.TryGetValues("X-Password", out passwords) && context.Request.Headers.TryGetValues("X-UserType", out userTypes))
             {
                 if ((usernames.FirstOrDefault().Equals("Admin") && passwords.FirstOrDefault().Equals("admin")) || (usernames.FirstOrDefault().Equals("Dhruvil") && passwords.FirstOrDefault().Equals("dhruvil")))
                 {
@@ -43,7 +40,7 @@ namespace FilterLearn.Filters
 
         public Task ChallengeAsync(HttpAuthenticationChallengeContext context, CancellationToken cancellationToken)
         {
-            if(context.ActionContext.RequestContext.Principal == null || !context.ActionContext.RequestContext.Principal.Identity.IsAuthenticated)
+            if (context.ActionContext.RequestContext.Principal == null || !context.ActionContext.RequestContext.Principal.Identity.IsAuthenticated)
             {
                 context.Result = new UnauthorizedResult(new AuthenticationHeaderValue[]
                 {

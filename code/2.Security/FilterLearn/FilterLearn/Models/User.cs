@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace FilterLearn.Models
+﻿namespace FilterLearn.Models
 {
     public class User
     {
