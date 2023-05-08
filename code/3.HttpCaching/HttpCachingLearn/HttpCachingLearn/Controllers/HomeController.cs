@@ -15,7 +15,7 @@ namespace HttpCachingLearn.Controllers
         {
             // memory cache
             ObjectCache cache = MemoryCache.Default;
-            string cacheKey = string.Empty;
+            string cacheKey = "states";
 
             if (cache.Contains(cacheKey))
             {

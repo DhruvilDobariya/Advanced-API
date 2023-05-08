@@ -32,7 +32,7 @@ namespace VersionLearn.Gateway
             //    version = queryString["v"];
             //}
 
-            // For Header
+            //For Header
             //IEnumerable<string> versions;
             //if (request.Headers.TryGetValues("version", out versions))
             //{
